@@ -1,0 +1,21 @@
+services:
+
+  postgreSQL:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: postgres #se necesita si o si
+      POSTGRES_USER: postgres #si no se pone coge por defecto (postgres)
+      POSTGRES_DB: marcosfa
+
+    container_name: postgres_marcosfa
+
+    ports:
+      - 5434:5434
+
+
+
+
+  adminer: #esto es lo que gestiona postgres
+    image: adminer
+    ports:
+        - 8080:8080      
